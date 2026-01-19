@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1" >
+    <title>7 Wonders Score Card</title>
+</head>
+<script defer src="script.js"></script>
+<link rel="stylesheet" href="styles.css">
+
+<body onload="randomBackground()">
+    <header>
+        <img src="images/Logo.png" alt="7 Wonders Score Car">
+        <button style="margin-left: auto;" onclick="showGameOptions()">New Board</button>
+        <button id="clearButton" onclick="clearScoreCard()" hidden>Clear Boards</button>
+        <button id="revealButton" onclick="revealScore()">Reveal Scores</button>
+    </header>
+    <main>
+        <div id="gameOptions" class="gameOptions">
+            <h2>New Board</h2>
+            <sub>Enter the players names </sub>
+            <div id="playerList">
+                <div class="playerPanel hideRemovePlayerButton">
+                    <input class="playerNameInput" type="text" placeholder="Player 1">
+                    <button class="arrowButtonUp" onclick="moveUp(this)">&#x25B2;</button>
+                    <button class="arrowButtonDown" onclick="moveDown(this)">&#x25BC;</button>
+                    <button class="removePlayer" onclick="removePlayer(this)">-</button>
+                </div>
+                <div class="playerPanel hideRemovePlayerButton">
+                    <input class="playerNameInput" type="text" placeholder="Player 2">
+                    <button class="arrowButtonUp" onclick="moveUp(this)">&#x25B2;</button>
+                    <button class="arrowButtonDown" onclick="moveDown(this)">&#x25BC;</button>
+                    <button class="removePlayer" onclick="removePlayer(this)">-</button>
+                </div>
+                <button id="addPlayer" onclick="addPlayer()"><p>Add PLayer</p></button>
+
+            </div>
+            <div>
+                <button onclick="showScoreCard()"><p>Cancel</p></button>
+                <button onclick="createScoreCard()"><p>Create Board</p></button>
+            </div>
+        </div>
+
+
+
+        <div id="scoreCard" class="scoreCard fadeOut" hidden>
+            <div class="scoreCardIcons">
+               <div><img src="images/player.svg" alt=""></div>
+               <div><img src="images/Military.webp" alt=""></div>
+               <div><img src="images/Coin.webp" alt=""></div>
+               <div><img src="images/Wonder-Stage.webp" alt=""></div>
+               <div><img src="images/Card-Blue.svg" alt=""></div>
+               <div><img src="images/Card-Yellow.svg" alt=""></div>
+               <div><img src="images/Card-Purple.svg" alt=""></div>
+               <div><img src="images/Card-Green.svg" alt=""></div>
+               <div><img src="images/Sigma.svg" alt=""></div>
+            </div>
+
+            <div class="scoreCardPlayer">
+                <div class="playerName">Player 1</div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="1"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="2"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="3"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="4"></div>  
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="5"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="6"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="7"></div>  
+                <div class="sum"></div>
+            </div>
+
+            <div class="scoreCardPlayer">
+                <div class="playerName">Player 2</div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="1"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="2"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="3"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="4"></div>  
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="5"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="6"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="7"></div>  
+                <div class="sum"></div>
+            </div>
+
+            <div class="scoreCardPlayer">
+                <div class="playerName">Player 3</div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="1"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="2"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="3"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="4"></div>  
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="5"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="6"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="7"></div>  
+                <div class="sum"></div>
+            </div>
+
+            <div class="scoreCardPlayer">
+                <div class="playerName">Player 4</div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="1"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="2"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="3"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="4"></div>  
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="5"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="6"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="7"></div>  
+                <div class="sum"></div>
+            </div>
+
+            <div class="scoreCardPlayer">
+                <div class="playerName">Player 5</div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="1"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="2"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="3"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="4"></div>  
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="5"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="6"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="7"></div>  
+                <div class="sum"></div>
+            </div>
+
+            <div class="scoreCardPlayer">
+                <div class="playerName">Player 6</div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="1"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="2"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="3"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="4"></div>  
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="5"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="6"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="7"></div>  
+                <div class="sum"></div>
+            </div>
+
+            <div class="scoreCardPlayer">
+                <div class="playerName">Player 7</div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="1"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="2"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="3"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="4"></div>  
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="5"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="6"></div>
+                <div><input type="number" pattern="[0-9\-]" class="scoreInput" tabindex="7"></div>  
+                <div class="sum"></div>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
