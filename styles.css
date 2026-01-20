@@ -1,7 +1,7 @@
 /* Global Page Configurations */
 @font-face {
     font-family: 'Ovo';
-    src: url('/font/Ovo-Regular.ttf');
+    src: url('https://raw.githubusercontent.com/DamoTheDonut/7WondersScoreCard/refs/heads/main/font/Ovo-Regular.ttf');
 }
 
 [hidden] {

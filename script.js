@@ -14,7 +14,7 @@ const backgrounds = [
     "images/Backgrounds/ephesus.jpg",
     "images/Backgrounds/colisee.jpg",
     "images/Backgrounds/default.webp",
-    "images/Backgrounds/jardins.jpg"
+    "images/Backgrounds/babylon.jpg"
 ]
 
 function randomBackground() {
